@@ -1,5 +1,10 @@
 
 
+*{
+    font-family: 'Fira Code', monospace;
+    font-family: 'Roboto', sans-serif;
+}
+
 body{
     background-color: black;
     color: white;
@@ -191,19 +196,139 @@ nav{
 
 header{
     display: flex;
-    background-color: white;
-    width: 95%;
-    height: 1000px;
+    background-color: gray;
+    width: 90%;
+    height: 600px;
     margin: auto;
-    border-radius: 75px;
+    border-radius: 20px;
     color: black;
-    margin-top: 15px;
+    margin-top: 20px;
     justify-content: center;
 }
 
-.cabecalho{
+/* formulario */
+
+.form {
     display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 97%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
     position: relative;
-    
-}
+  }
+  
+  .title {
+    font-size: 28px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  }
+  
+  .title::before,.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: yellow;
+  }
+  
+  .title::before {
+    width: 18px;
+    height: 18px;
+    background-color: orange;
+  }
+  
+  .title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+  }
+  
+  .message, .signin {
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 15px;
+  }
+   
+  .flex {
+    display: flex;
+    width: 90%;
+    gap: 50px;
+  }
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input {
+    width: 97%;
+    padding: 20px 20px 20px 20px;
+    outline: 0;
+    border: 1px solid rgba(0, 0, 0, 0.397);
+    border-radius: 10px;
+  }
+  
+  .form label .input + span {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 20px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,.form label .input:valid + span {
+    top: 40px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .form label .input:valid + span {
+    color: green;
+  }
+  
+  .submit {
+    border: none;
+    outline: none;
+    background-color: #ff8800;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+  }
+  
+  .submit:hover {
+    background-color: #9b5301;
+    cursor: pointer;
+  }
+
+  .submit:active{
+    background-color: #ff8800;
+  }
+  
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
 

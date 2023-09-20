@@ -7,5 +7,12 @@ def ver_home(request):
     return render(request, 'home.html')
 # linkando o html
 
-def inserir_produtos(request):
-    return HttpResponse('estou no inserir')
+def adcionarItem(request):
+    return render(request, 'adcionarItem.html')
+#     if request.method == "get":
+#         return render(request, 'adcionarItem.html')
+#     # elif request.method ==  "post":
+#     #     return
+
+def itemAdcionado(request):
+    return render(request, 'itemAdcionado.html')
