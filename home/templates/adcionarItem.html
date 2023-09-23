@@ -52,7 +52,7 @@
         </div>
     </nav>
     <header>
-        <form class="form" action="{% url 'adcionarItem' %}" method="post">{% csrf_token %}
+        <form class="form" action="{% url 'adcionarItem' %}" method="POST">{% csrf_token %}
             <p class="title">Registro </p>
             <p class="message">Adcione informações sobre o produto</p>
                 <div class="flex">
@@ -84,7 +84,7 @@
         </form>
         </div>
     </header>
-    <script>
+    <!-- <script>
                 // Referenciar os elementos do formulário e o botão
         const formulario = document.querySelector('.form');
         const quantidadeInput = formulario.querySelector('input[name="quantidade"]');
@@ -135,6 +135,6 @@
 
         // Verifique o estado inicial dos campos
         verificarCamposPreenchidos();
-    </script>
+    </script> -->
 </body>
 </html>
