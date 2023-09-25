@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Produtos
 from django import db
-db.connections.close_all()
 
 # criando as funções e ligando com as urls onde serão executadas
 
@@ -21,6 +20,7 @@ def adcionarItem(request):
         valor = request.POST.get('valor')
         produtos = Produtos(quantidade=quantidade, codigo=codigo, descricao=descricao, aplicacao=aplicacao, valor=valor )
         produtos.save()
-        return render(request, 'adcionarItem.html')
+        return render(request, 'itemAdcionado.html')
+
 def itemAdcionado(request):
     return render(request, 'itemAdcionado.html')

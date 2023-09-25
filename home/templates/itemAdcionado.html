@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'home/css/ver_home.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/itemAdcionado.css' %}">
     <link rel="adcionarItem" href="adcionarItem.html">
     <title>Document</title>
 </head>
@@ -17,7 +17,7 @@
         </div>
         <div class="botoes">   
            <div class="btn-conteiner">
-                <a class="btn-content" href="">
+                <a class="btn-content" href="http://127.0.0.1:8000/home/ver_home/adcionarItem/">
                 <span class="btn-title">Adcionar Item</span>
                 <span class="icon-arrow">
                     <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -47,12 +47,10 @@
         </div>
     </nav>
     <header>
-        <div class="cabecalho">
-            <div class="quantidade">QTD</div>
-            <div class="codigo">COD</div>
-            <div class="descricao">Descrição</div>
-            <div class="aplicacao">Aplicação</div>
-            <div class="valor">Valor</div>
+        <div>
+            <img class="selo" src="{% static 'home/img/selo.png'%}" alt="">
+            <h1>ITEM ADCIONADO COM SUCESSO</h1>
+            <p>Para adcionar um novo item clique <a href="http://127.0.0.1:8000/home/ver_home/adcionarItem/">aqui</a></p>
         </div>
     </header>
 </body>
