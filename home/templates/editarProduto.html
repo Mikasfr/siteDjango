@@ -1,5 +1,3 @@
-
-
 {% load static %}
 
 <!DOCTYPE html>
@@ -7,13 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="home" href="home.html">
-    <link rel="stylesheet" href="{% static 'home/css/adcionarItem.css'%}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;700&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="itemAdcionado" href="itemAdcionado.html">
-    <link rel="script" href="{% static 'home/js/adcionarItem.js'%}">
+    <link rel="stylesheet" href="{% static 'home/css/editarProduto.css' %}">
+    <link rel="adcionarItem" href="adcionarItem.html">
     <title>Document</title>
 </head>
 <body>
@@ -24,7 +17,7 @@
         </div>
         <div class="botoes">   
            <div class="btn-conteiner">
-                <a class="btn-content" href="">
+                <a class="btn-content" href="adcionarItem/">
                 <span class="btn-title">Adicionar Item</span>
                 <span class="icon-arrow">
                     <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -38,7 +31,7 @@
                 </a>
             </div>
             <div class="btn-conteiner2">
-                <a class="btn-content2" href="http://127.0.0.1:8000/home/ver_home/">
+                <a class="btn-content2" href="">
                 <span class="btn-title">Estoque</span>
                 <span class="icon-arrow">
                     <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -53,38 +46,39 @@
             </div>
         </div>
     </nav>
-    <header>
-        <form class="form" action="{% url 'adcionarItem' %}" method="POST">
-            {% csrf_token %}
-            <p class="title">Registro </p>
-            <p class="message">Adcione informações sobre o produto</p>
-                <div class="flex">
-                <label>
-                    <input required="" placeholder="" type="number" class="input" name="quantidade">
-                    <span>Quantidade</span>
-                </label>
-                <label>
-                    <input required="" placeholder="" type="number" class="input" name="codigo">
-                    <span>Código</span>
-                </label>
-            </div>  
-                    
+    <h1>Editar Produto</h1>
+    <form class="form" method="POST">
+        {% csrf_token %}
+        <p class="title">Registro </p>
+        <p class="message">Adcione informações sobre o produto</p>
+            <div class="flex">
             <label>
-                <input required="" placeholder="" type="text" class="input" name="descricao">
-                <span>Descrição</span>
-            </label> 
+                <input required="" placeholder="" type="number" class="input" name="quantidade" {{form.quantidade}} >
+                <span>Quantidade</span>
+            </label>
+    
+            <label>
+                <input required="" placeholder="" type="number" class="input" name="codigo" {{form.codigo}}>
+                <span>Código</span>
+            </label>
+        </div>  
                 
-            <label>
-                <input required="" placeholder="" type="text" class="input" name="aplicacao">
-                <span>Aplicação</span>
-            </label>
-            <label>
-                <input required="" placeholder="" type="number" class="input" name="valor">
-                <span>Valor</span>
-            </label>
-           <button class="submit" value="submit">Enviar para o estoque</button>
-        </form>
-        </div>
-    </header>
+        <label>
+            <input required="" placeholder="" type="text" class="input" name="descricao" {{form.descricao}}>
+            <span>Descrição</span>
+        </label> 
+            
+        <label>
+            <input required="" placeholder="" type="text" class="input" name="aplicacao" {{form.aplicacao}} >
+            <span>Aplicação</span>
+        </label>
+        <label>
+            <input required="" placeholder="" type="number" class="input" name="valor" {{form.valor}} >
+            <span>Valor</span>
+        </label>
+        <input type="submit" value="Salvar">
+    </form>
+    </div>
+    <a href="{% url 'ver_home' %}">Voltar para o estoque</a>
 </body>
 </html>

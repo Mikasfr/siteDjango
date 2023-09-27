@@ -1,7 +1,7 @@
 
 
 body{
-    background-color: black;
+    background-color: #000000;
     color: white;
     margin: 0;
 }
@@ -14,7 +14,7 @@ width: 350px;
 nav{
     position: relative;
     justify-content:space-between;
-    background-color: rgb(246, 193, 47);
+    background-color: rgb(248, 186, 2);
     display: flex;
     height: 100px;
 }
@@ -191,9 +191,8 @@ nav{
 
   .searchBox {
     margin-top: 2%;
-    margin-left: 35%;
     display: flex;
-    max-width: 400px;
+    width: 500px;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
@@ -216,19 +215,19 @@ nav{
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
   }
   /*hover effect*/
-  button:hover {
+  .searchButton:hover {
     color: #fff;
     background-color: #1A1A1A;
     box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
     transform: translateY(-3px);
   }
   /*button pressing effect*/
-  button:active {
+  .searchButton:active {
     box-shadow: none;
     transform: translateY(0);
   }
   
-  .searchInput {
+.searchInput {
     border: none;
     background: none;
     outline: none;
@@ -237,6 +236,94 @@ nav{
     padding: 24px 46px 24px 26px;
   }
   
-  
+header{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+}
 
-  
+table{
+    margin-top: 35px;
+    width: 80%;
+    background-color: rgb(219, 219, 219);
+    color: black;
+    align-items:center;
+    border: 10px;
+    border: 5px solid rgb(159, 158, 158);
+    border-radius: 5px;
+}
+
+thead{
+  background-color: rgb(248, 186, 2);
+}
+
+.botaoRemover{
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+button {
+  width: 150px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: red;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  background: #e62222;
+ }
+ 
+ button, button span {
+  transition: 200ms;
+ }
+ 
+ button .text {
+  transform: translateX(35px);
+  color: white;
+  font-weight: bold;
+ }
+ 
+ button .icon {
+  position: absolute;
+  border-left: 1px solid #c41b1b;
+  transform: translateX(110px);
+  height: 30px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+ 
+ button svg {
+  width: 15px;
+  fill: #eee;
+ }
+ 
+ button:hover {
+  background: #ff3636;
+ }
+ 
+ button:hover .text {
+  color: transparent;
+ }
+ 
+ button:hover .icon {
+  width: 150px;
+  border-left: none;
+  transform: translateX(0);
+ }
+ 
+ button:focus {
+  outline: none;
+ }
+ 
+ button:active .icon svg {
+  transform: scale(0.8);
+ }

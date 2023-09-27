@@ -31,7 +31,7 @@
                 </a>
             </div>
             <div class="btn-conteiner2">
-                <a class="btn-content2" href="#">
+                <a class="btn-content2" href="http://127.0.0.1:8000/home/ver_home/">
                 <span class="btn-title">Estoque</span>
                 <span class="icon-arrow">
                     <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -47,10 +47,13 @@
         </div>
     </nav>
     <header>
-        <div>
+        <div class="header">
             <img class="selo" src="{% static 'home/img/selo.png'%}" alt="">
-            <h1>ITEM ADCIONADO COM SUCESSO</h1>
-            <p>Para adcionar um novo item clique <a href="http://127.0.0.1:8000/home/ver_home/adcionarItem/">aqui</a></p>
+            <h1>ITEM ADICIONADO COM SUCESSO</h1>
+            <p>Para adcionar um novo item clique <br><a class="link" href="http://127.0.0.1:8000/home/ver_home/adcionarItem/"><button type="button" class="button">
+                <span class="button__text">Add Item</span>
+                <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+            </button></a></p>
         </div>
     </header>
 </body>
