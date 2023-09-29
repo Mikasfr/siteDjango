@@ -30,13 +30,8 @@ def itemAdcionado(request):
 
 def remover_produto(request, codigo):
     try:
-        # Use o código do produto para encontrar o objeto do produto no banco de dados
         produto = Produtos.objects.get(codigo=codigo)
-        
-        # Realize a remoção do produto
         produto.delete()
-
-        # Redirecione de volta para a página de estoque após a remoção
         return redirect('ver_home')
 
     except Produtos.DoesNotExist:
@@ -65,3 +60,8 @@ def editarProduto(request, codigo):
         # Lidar com o caso em que o produto não existe
         # Você pode retornar uma página de erro ou uma mensagem apropriada aqui
         pass
+
+def searchProducts(request):
+    query = request.GET.get('pesquisa')
+    produtos = Produtos.objects.filter(codigo__icontains=query)
+    return render(request, 'home.html', {'produtos': produtos, 'query': query})
